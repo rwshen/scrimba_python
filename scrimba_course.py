@@ -12,3 +12,36 @@ geography = True
 print(name + " is failing " + failed_subjects + " subjects." )
 name="Molly"
 print(name + " is doing well in school.")
+
+# Datatypes & Typecasting
+# integers vs. floats
+failed_subjects=2
+float_example=3.45
+
+# booleans 
+is_failing=False
+# you can use double quotes for contractions
+contraction_example = "it's"
+# the character after the backlash escapes the character
+contraction_another_example='it\'s'
+print(type(contraction_another_example))
+print(type(failed_subjects))
+print(type(float_example))
+
+string_failed_subjects = str(failed_subjects)
+print(name + " is failing " + string_failed_subjects + " subjects.")
+
+# Typecasting oddities
+a = int(1)        # a will be 1
+b = int(2.5)      # b will be 2
+c = int("3")      # c will be 3
+c1 = int(float(("3.4")))   # c1 will be...3
+d = float(1)      # d will be 1.0
+e = float(2.5)    # e will be 2.5
+f = float("3")    # f will be 3.0
+g = float("4.23") # g will be 4.23
+h = str("80s")    # h will be '80s'
+i = str(22)       # i will be '22'
+j = str(3.01)     # j will be '3.01'
+
+print([a,b,c,c1, d,e,f,g,h,i,j])
