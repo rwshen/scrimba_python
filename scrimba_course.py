@@ -45,3 +45,17 @@ i = str(22)       # i will be '22'
 j = str(3.01)     # j will be '3.01'
 
 print([a,b,c,c1, d,e,f,g,h,i,j])
+
+# Arithmetic operations
+# a=6
+# b=2
+a = 10
+b = 3
+print('Addition : ', a + b)
+print('Subtraction : ', a - b)
+print('Multiplication : ', a * b)
+print('Division (float) : ', a / b)
+# rounds the result to a full number
+print('Division (floor) : ', a // b)
+print('Modulus : ', a % b)
+print('Exponent : ', a ** b)
