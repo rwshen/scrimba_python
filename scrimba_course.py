@@ -59,3 +59,26 @@ print('Division (float) : ', a / b)
 print('Division (floor) : ', a // b)
 print('Modulus : ', a % b)
 print('Exponent : ', a ** b)
+
+# Strings
+msg='welcome to Python 101: Strings'
+msg1='welcome to Python 101 it\'s cool: Strings'
+print(msg) # welcome to Python 101: Strings
+print(msg + msg) # welcome to Python 101: Stringswelcome to Python 101: Strings
+print(msg*2) # welcome to Python 101: Stringswelcome to Python 101: Strings
+print(msg, msg) # welcome to Python 101: Strings welcome to Python 101: Strings
+print(msg.upper()) # whole string will become uppercase
+print(msg.lower())
+print(msg.capitalize())
+print(msg.title())
+print(msg1.title()) # It'S
+
+print(len(msg))
+# count the number of instances of a letter or word
+print(msg.count('Python'))
+print(msg.count('o'))
+# slicing
+print(msg[0])
+print(msg[-1])
+print(msg[2:]
+)
