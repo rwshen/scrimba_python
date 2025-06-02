@@ -80,5 +80,16 @@ print(msg.count('o'))
 # slicing
 print(msg[0])
 print(msg[-1])
-print(msg[2:]
-)
+print(msg[2:])
+print(msg[::-1])
+
+print(msg.find('h'))
+print(msg.replace('Python', 'Typescript'))
+msg1 = msg.replace('Python', 'Typescript')
+
+print('Python' in msg)
+print('Typescript' not in msg)
+
+color = 'purple'
+msg2 = f'[{name.capitalize()}] loves the color {color.lower()}!'
+print(msg2)
