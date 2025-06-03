@@ -93,3 +93,12 @@ print('Typescript' not in msg)
 color = 'purple'
 msg2 = f'[{name.capitalize()}] loves the color {color.lower()}!'
 print(msg2)
+
+# User input 
+name = input('What is your name?: ')
+age = input('How old are you?: ')
+print(f'Hello {name}! You are {age} years old.')
+
+num1 = float(input('Enter a number: '))
+num2 = float(input('Enter a different number: '))
+print(num1 + num2)
