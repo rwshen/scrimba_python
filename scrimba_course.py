@@ -157,3 +157,20 @@ print(friends)
 del friends[1]
 
 new_friends = friends.copy() # friends[:],  list(friends)
+
+sales_w1 = [7,3,42,19,15,35,9]
+sales_w2 = [12,4,26,10,7,28]
+# new_day = int(input('Enter number of lemonade sold in the new day: '))
+# sales_w2.append(new_day)
+sales = []
+# sales_w1.extend(sales_w2)
+# sales.extend(sales_w1)
+sales = sales_w1 + sales_w2
+sales.sort()
+print(sales)
+best_day_profit = max(sales) * 1.5
+worst_day_profit = min(sales) * 1.5
+print(f'Best day profit: ${best_day_profit}')
+print(f'Worst day profit: ${worst_day_profit}')
+print(f'Combined profit: ${best_day_profit + worst_day_profit}')
+
