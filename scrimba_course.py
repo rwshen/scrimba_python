@@ -95,13 +95,13 @@ msg2 = f'[{name.capitalize()}] loves the color {color.lower()}!'
 print(msg2)
 
 # User input 
-name = input('What is your name?: ')
-age = input('How old are you?: ')
-print(f'Hello {name}! You are {age} years old.')
+# name = input('What is your name?: ')
+# age = input('How old are you?: ')
+# print(f'Hello {name}! You are {age} years old.')
 
-num1 = float(input('Enter a number: '))
-num2 = float(input('Enter a different number: '))
-print(num1 + num2)
+# num1 = float(input('Enter a number: '))
+# num2 = float(input('Enter a different number: '))
+# print(num1 + num2)
 
 # - Create a distance converter converting Km to miles
 # - Take two inputs from user: Their first name and the distance in km
@@ -109,7 +109,51 @@ print(num1 + num2)
 # - 1 mile is 1.609 kilometers
 # - hint: use correct types for calculating and print
 # - Did you capitalize the name
-name = input('Enter your name: ').title()
-distance_km = float(input('Enter a distance in km: '))
-distance_mi = distance_km / 1.609
-print(f'Hello {name}. The distance is {distance_km}km which is {distance_mi}mi.')
+# name = input('Enter your name: ').title()
+# distance_km = float(input('Enter a distance in km: '))
+# distance_mi = distance_km / 1.609
+# print(f'Hello {name}. The distance is {distance_km} km which is {round(distance_mi, 2)} mi.')
+
+
+# Lists
+friends = ['John','Michael','Terry','Eric','Graham']
+
+print(friends[1],friends[4])
+print(friends[2:4])
+print(friends.index('Eric'))
+print(friends.count('Eric'))
+
+cars = [911, 130, 328, 535, 740, 308]
+# sorting in place
+friends.sort()
+print(friends)
+friends.sort(reverse=True)
+print(friends)
+friends.reverse()
+print(friends)
+
+print(min(cars))
+print(max(cars))
+print(sum(cars))
+
+friends.append('TerryG')
+friends.insert(1, 'TerryG')
+print(friends)
+friends[1]='TerryG'
+print(friends)
+friends.extend(cars)
+print(friends)
+
+# Remove from a list
+friends.remove('TerryG')
+print(friends)
+# pop  it into memory to use it to something
+friends.pop() 
+print(friends)
+
+# clear the list
+# friends.clear()
+print(friends)
+del friends[1]
+
+new_friends = friends.copy() # friends[:],  list(friends)
