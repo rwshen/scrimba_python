@@ -192,4 +192,9 @@ print(friends_list)
 # you may need to run same command several times
 # use print() statements to work your way through the exercise
 friends_list = csv.replace(';', ',').replace(':', ',').split(',')
+# friends_list = (','.join(','.join(csv.split(';')).split(':'))).split(',')
 print(friends_list)
+# replace() doesn't support regex need to import re
+import re
+friends_list_1 = re.sub(r"[;:]", ",", csv).split(',')
+print(friends_list_1)
