@@ -166,7 +166,7 @@ sales = []
 # sales_w1.extend(sales_w2)
 # sales.extend(sales_w1)
 sales = sales_w1 + sales_w2
-sales.sort()
+# sales.sort() not needed to sort with min and max
 print(sales)
 best_day_profit = max(sales) * 1.5
 worst_day_profit = min(sales) * 1.5
@@ -174,3 +174,11 @@ print(f'Best day profit: ${best_day_profit}')
 print(f'Worst day profit: ${worst_day_profit}')
 print(f'Combined profit: ${best_day_profit + worst_day_profit}')
 
+# Split and Join
+msg ='Welcome  to  Python  101: Split  and Join'
+csv = 'Eric,John,Michael,Terry,Graham'
+friends_list = ['Eric','John','Michael','Terry','Graham']
+# list(msg) splits each letter
+print(msg.split())
+print('-'.join(friends_list))
+# print(''.join(msg.split())) accomplishes the same as print(msg.replace(' ', ''))
