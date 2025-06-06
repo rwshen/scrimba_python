@@ -194,7 +194,48 @@ print(friends_list)
 friends_list = csv.replace(';', ',').replace(':', ',').split(',')
 # friends_list = (','.join(','.join(csv.split(';')).split(':'))).split(',')
 print(friends_list)
+
+
 # replace() doesn't support regex need to import re
 import re
+
 friends_list_1 = re.sub(r"[;:]", ",", csv).split(',')
 print(friends_list_1)
+
+# Tuples - faster lists that you can't change (immutable)
+friends_tuple = ('John','Michael','Terry','Eric','Graham')
+print(friends_tuple)
+# friends_tuple[2], can [1:3]
+
+# Sets - unordered lists that are even faster (100x faster than lists), removes any duplicates
+friends_sets = {'John','Michael','Terry','Eric','Graham'}
+my_friends_set = { 'John', 'Rachel'}
+my_empty_set = set() # can't do {} which is a dictionary
+print(friends_sets.intersection(my_friends_set))
+print(friends_sets.difference(my_friends_set))
+print(friends_sets.union(my_friends_set))
+
+#Sets - Exercise
+
+#1. Check if ‘Eric’ and ‘John’ exist in friends
+#2. combine or add the two sets 
+#3. Find names that are in both sets
+#4. find names that are only in friends
+#5. Show only the names who only appear in one of the lists
+#6. Create a new cars-list without duplicates
+
+friends = {'John','Michael','Terry','Eric','Graham'}
+my_friends_exercise_set = {'Reg','Loretta','Colin','John','Graham'}
+cars =['900','420','V70','911','996','V90','911','911','S','328','900']
+#1 
+print('Eric' in friends)
+print('John' in friends)
+#2
+print(friends.union(my_friends_exercise_set))
+#3 
+print(friends.intersection(my_friends_exercise_set))
+#4
+print(friends.difference(my_friends_exercise_set))
+#6 
+my_cars_set = set(cars)
+print(my_cars_set)
