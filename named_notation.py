@@ -13,7 +13,8 @@ def value_added_tax(amount):
     total_amount = amount * 1.25
     # returns a tuple
     # return amount, tax, total_amount
-    return [amount, tax, total_amount]
+    # returns a list
+    return [f"${amount:.2f}", f"${tax:.2f}", f"${total_amount:.2f}"]
 
 
 print(value_added_tax(100))
