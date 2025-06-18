@@ -1,9 +1,12 @@
 def num_days(month):
-    if month == 'jan' or month == 'mar' or month == 'may' or month == 'jul' or month == 'aug' or month == 'oct' or month == 'dec':
-        print('number of days in',month,'is',31)
+    days = 31
+    if month in ['apr', 'jun', 'sep','nov']:
+        days = 30
     elif month == 'feb':
-        print('number of days in',month,'is',28)
-    else: 
-        print('number of days in',month,'is',30)
+        days = 28
+    return f"number of days in {month.title()} is {days}."
 
-num_days('oct')
+print(num_days('oct'))
+print(num_days('feb'))
+print(num_days('june'))
+print(num_days('april'))
