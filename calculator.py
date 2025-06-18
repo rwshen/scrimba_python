@@ -27,7 +27,7 @@ num_1 = float(input('Enter a number: '))
 operator = input('Enter an operator: ')
 num_2 = float(input('Enter another number: '))
 convert = input('Do you want to turn to F?: ')
-if convert == 'Yes' or convert == 'yes' or convert == 'y':
+if convert.title() == 'Yes' or convert.title() == 'Y':
     celcius = False
 celcius = True
 print(calculator(num_1, operator, num_2, celcius))
