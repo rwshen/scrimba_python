@@ -20,7 +20,10 @@ shops = [freelancers, antiques, pet_shop]
 
 def go_shopping(shop):
     items = {key: value for key, value in shop.items() if key != 'name'}
-    buy_item =  input(f'\n\nWhat item do you want to buy? \n\n {list(items.keys())} \n\n: ')
+    shop_name = list({key: value for key, value in shop.items() if key == 'name'}.values())[0]
+    buy_item = input(f'\n\nWhat item do you want to buy from {shop_name}? \n\n {(', ').join(list(items.keys()))} \n\n: ')
+    if buy_item not in items.keys():
+        print('This item is not in the inventory.')
     return buy_item
 
 def make_cart(buy_item, shop):
@@ -28,11 +31,34 @@ def make_cart(buy_item, shop):
         cart.append({'item': buy_item, 'price': shop[buy_item]})
         shop.pop(buy_item)
 
+def ask_if_done():
+    answer = input('\n Are you done shopping? ')
+    if answer == 'yes' or answer =='Yes' or answer == 'Y':
+        return True
+    return False
+
+index = 0
 for shop in shops:
     item = go_shopping(shop)
     make_cart(item, shop)
+    index += 1
+    if index < len(shops):
+        if ask_if_done() == True:
+            break
 
+def give_formatted_inventory(stuff):
+    stuffs = ''
+    total = 0
+    for s in stuff: 
+        stuffs += f' {s[0]},'
+        total += s[1]
+    return f'\n\n You have{stuffs} and it costs ${total}.\n'
+
+# After shopping:
+inventory = []
 for items in cart:
-    inventory = list(items.values())
-    print(f'You got a {inventory[0]} worth ${inventory[1]}')
+    inventory.append(list(items.values()))
+
+print(give_formatted_inventory(inventory))
+    
 
