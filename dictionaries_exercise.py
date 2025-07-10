@@ -15,33 +15,24 @@ antiques = {'name':'Antique Shop','french castle':400, 'wooden grail':3, 'scythe
 pet_shop = {'name':'Pet Shop','blue parrot':10, 'white rabbit':5, 'newt': 2}
 
 
-cart = {}
-shops = {**freelancers, **antiques, **pet_shop}
-total_items = []
+cart = []
+shops = [freelancers, antiques, pet_shop]
 
-def make_total_items(): 
-    for key, value in shops.items():    
-        if key not in total_items and key != 'name':
-            total_items.append(key)
-    return total_items
-
-def go_shopping(total_items):
-    buy_item =  input(f'What item do you want to buy? \n\n {total_items} \n\n: ')
+def go_shopping(shop):
+    items = {key: value for key, value in shop.items() if key != 'name'}
+    buy_item =  input(f'\n\nWhat item do you want to buy? \n\n {list(items.keys())} \n\n: ')
     return buy_item
 
-def make_cart(buy_item):
-    for key, value in shops.items():
-        if buy_item == key:
-            cart.update({'item': key, 'price': value})
-            shops.pop(key)
-            break
-    return print(f'You Purchased {cart['item']}, it is ${cart['price']}. Have a nice day of mayhem!')
+def make_cart(buy_item, shop):
+    if shop.get(buy_item):
+        cart.append({'item': buy_item, 'price': shop[buy_item]})
+        shop.pop(buy_item)
 
-total_items = make_total_items()
-item = go_shopping(total_items)  
-print(item)
-make_cart(item)
+for shop in shops:
+    item = go_shopping(shop)
+    make_cart(item, shop)
 
-yes_or_no = input('Do you want to continue shopping? ')
-if yes_or_no == 'yes':
-    make_cart(go_shopping(make_total_items()))
+for items in cart:
+    inventory = list(items.values())
+    print(f'You got a {inventory[0]} worth ${inventory[1]}')
+
