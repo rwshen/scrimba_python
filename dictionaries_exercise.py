@@ -26,10 +26,13 @@ def go_shopping(shop):
         print('This item is not in the inventory.')
     return buy_item
 
-def make_cart(buy_item, shop):
+def make_cart(buy_item, shop, total=1000):
     if shop.get(buy_item):
         cart.append({'item': buy_item, 'price': shop[buy_item]})
+        total -= shop[buy_item]
+        print(f'You have ${total} left.')
         shop.pop(buy_item)
+        return total
 
 def ask_if_done():
     answer = input('\n Are you done shopping? ')
@@ -40,7 +43,7 @@ def ask_if_done():
 index = 0
 for shop in shops:
     item = go_shopping(shop)
-    make_cart(item, shop)
+    total = make_cart(item, shop)
     index += 1
     if index < len(shops):
         if ask_if_done() == True:
